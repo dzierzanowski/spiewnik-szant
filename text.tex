@@ -1,4 +1,56 @@
-\documentclass{article}
+\documentclass{book}
+\usepackage[full]{leadsheets}
+\usepackage[a4paper, margin=0.75in]{geometry}
+\usepackage{multicol}
+\usepackage[polish]{babel}
+\usepackage{array}
+\usepackage{graphicx}
+\thispagestyle{empty}
+
+%\usepackage[default]{lato}
+%\usepackage[T1]{fontenc}
+
+\selectlanguage{polish}
+\DeclareTranslation{Polish}{leadsheets/chorus}{Ref.}
+\DeclareTranslation{Polish}{leadsheets/lyrics}{tekst}
+\DeclareTranslation{Polish}{leadsheets/verse}{Zwr.}
+
+\definesongtitletemplate{custom}{%
+    \section*{\songproperty{title}}%
+    \ifsongproperty{music}{%
+        \begingroup\footnotesize
+            Muzyka: \songproperty{music}
+        \endgroup
+    }{}%
+}
+
+\setleadsheets{title-template = custom}
+
 \begin{document}
-  Hello World!
+
+\begin{titlepage}
+    \begin{center}
+        \vspace*{7cm}
+        
+        %\includegraphics[width=0.75\textwidth]{front-obrazek.png}
+        \includegraphics[height=8cm]{front-obrazek.png}
+
+        \vspace{1cm}
+
+        \Huge\textbf{Jakieś piosenki}
+
+        \vspace{0.5cm}
+
+        \LARGE{może szanty}
+
+        \vfill
+
+        \Large
+        Wydawnictwo Kis Inkris \\
+        Warszawa, 2021
+    \end{center}
+\end{titlepage}
+
+\input{songs/kapitan_kidd.tex}
+
 \end{document}
