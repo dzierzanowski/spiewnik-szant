@@ -1,4 +1,0 @@
-\babel@toc {polish}{}
-\babel@toc {polish}{}
-\contentsline {section}{\numberline {1}Kapitan Kidd}{3}{section.1}%
-\contentsline {section}{\numberline {2}Stary Bryg}{4}{section.2}%
