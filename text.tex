@@ -1,10 +1,13 @@
-\documentclass{book}
+\documentclass[11pt, twoside]{article}
 \usepackage[full]{leadsheets}
-\usepackage[a4paper, margin=0.75in]{geometry}
+\usepackage[a4paper,  hmargin=1.5cm, vmargin=3cm]{geometry}
 \usepackage{multicol}
 \usepackage[polish]{babel}
 \usepackage{array}
 \usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{tocloft}
+\usepackage{fancyhdr}
 \thispagestyle{empty}
 
 %\usepackage[default]{lato}
@@ -16,41 +19,76 @@
 \DeclareTranslation{Polish}{leadsheets/verse}{Zwr.}
 
 \definesongtitletemplate{custom}{%
-    \section*{\songproperty{title}}%
+    \let\clearpage\relax
+    \ifsongmeasuring%
+        {\section*}
+        {\section}%
+        {\songproperty{title}}%
     \ifsongproperty{music}{%
-        \begingroup\footnotesize
+        \begingroup
             Muzyka: \songproperty{music}
         \endgroup
-    }{}%
+    }{}
 }
 
-\setleadsheets{title-template = custom}
+\setleadsheets{%
+    title-template = custom,
+    verse/numbered,
+    remember-chords,
+    align-chords={l}
+}
+
+% Tytuł spisu treści
+\addto\captionspolish{\renewcommand*\contentsname{Jakieś piosenki}}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Jakieś piosenki}
+\fancyhead[R]{\leftmark}
+\fancyfoot[LE,RO]{\Large\thepage}
+\fancyfoot[LO]{\includegraphics[width=1.5cm]{kolo.png}}
+\fancyfoot[RE]{\includegraphics[width=1.5cm]{kotwica.png}}
+
 
 \begin{document}
+\renewcommand{\cftdot}{\ensuremath{\sim}}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
 
 \begin{titlepage}
     \begin{center}
-        \vspace*{7cm}
+        \vspace*{5cm}
         
-        %\includegraphics[width=0.75\textwidth]{front-obrazek.png}
         \includegraphics[height=8cm]{front-obrazek.png}
 
-        \vspace{1cm}
+        \vspace{1.5cm}
 
         \Huge\textbf{Jakieś piosenki}
-
+        
         \vspace{0.5cm}
-
-        \LARGE{może szanty}
-
+        
+        \LARGE Wydanie pierwsze
+        
         \vfill
 
         \Large
         Wydawnictwo Kis Inkris \\
         Warszawa, 2021
+
+        \vspace{0.5cm}
+
+        \footnotesize
+        https://github.com/dzierzanowski/spiewnik-szant
     \end{center}
 \end{titlepage}
 
-\input{songs/kapitan_kidd.tex}
+\tableofcontents
+
+\input{songs/north_cape-kapitan_kidd.tex}
+\input{songs/ekt_gdynia-stary_bryg.tex}
+
+\newpage
+\pagestyle{empty}
+\mbox{}
+\cleardoublepage{}
 
 \end{document}
