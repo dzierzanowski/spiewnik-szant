@@ -8,6 +8,7 @@
 \usepackage{hyperref}
 \usepackage{tocloft}
 \usepackage{fancyhdr}
+\usepackage{tikzpagenodes}
 \thispagestyle{empty}
 
 %\usepackage[default]{lato}
@@ -15,8 +16,14 @@
 
 \selectlanguage{polish}
 \DeclareTranslation{Polish}{leadsheets/chorus}{Ref.}
+\DeclareTranslation{Polish}{leadsheets/interlude}{Przej.}
 \DeclareTranslation{Polish}{leadsheets/lyrics}{tekst}
 \DeclareTranslation{Polish}{leadsheets/verse}{Zwr.}
+%\DeclareTranslation{Polish}{leadsheets/capo}{Kapo}
+\DeclareTranslation{Polish}{leadsheets/fret}{próg}
+
+% Tytuł spisu treści
+\addto\captionspolish{\renewcommand*\contentsname{Jakieś piosenki}}
 
 \definesongtitletemplate{custom}{%
     \let\clearpage\relax
@@ -24,22 +31,35 @@
         {\section*}
         {\section}%
         {\songproperty{title}}%
-    \ifsongproperty{music}{%
-        \begingroup
-            Muzyka: \songproperty{music}
-        \endgroup
-    }{}
+    \begingroup\footnotesize
+        \begin{tabular}{%
+                @{}
+                >{\raggedright\arraybackslash}p{.5\linewidth}
+                @{}
+                >{\raggedleft\arraybackslash}p{.5\linewidth}
+                @{}
+            }
+            \ifsongproperty{music}{%
+                Muzyka: \songproperty{music} \\%
+                }{}%
+            \ifsongproperty{interpret}{%
+                Interpretacja: \songproperty{interpret} \\%
+                }{}%
+            \ifsongproperty{capo}{%
+                & \capo{} \\%
+                }{}%
+        \end{tabular}%
+        \par
+    \endgroup
 }
 
 \setleadsheets{%
     title-template = custom,
     verse/numbered,
     remember-chords,
-    align-chords={l}
+    align-chords={l},
+    capo-nr-format=arabic
 }
-
-% Tytuł spisu treści
-\addto\captionspolish{\renewcommand*\contentsname{Jakieś piosenki}}
 
 \pagestyle{fancy}
 \fancyhf{}
@@ -49,10 +69,10 @@
 \fancyfoot[LO]{\includegraphics[width=1.5cm]{kolo.png}}
 \fancyfoot[RE]{\includegraphics[width=1.5cm]{kotwica.png}}
 
-
-\begin{document}
 \renewcommand{\cftdot}{\ensuremath{\sim}}
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+
+\begin{document}
 
 \begin{titlepage}
     \begin{center}
@@ -78,6 +98,10 @@
 
         \footnotesize
         https://github.com/dzierzanowski/spiewnik-szant
+
+        \begin{tikzpicture}[remember picture,overlay,shift={(current page.south east)}]
+            \node[anchor=south east,xshift=0cm,yshift=0cm]{\includegraphics[width=3.5cm]{qr.png}};
+        \end{tikzpicture}
     \end{center}
 \end{titlepage}
 
@@ -85,10 +109,9 @@
 
 \input{songs/north_cape-kapitan_kidd.tex}
 \input{songs/ekt_gdynia-stary_bryg.tex}
+\input{songs/gotye-premium_boy(somebody).tex}
 
-\newpage
-\pagestyle{empty}
-\mbox{}
-\cleardoublepage{}
+% Ostatnia strona parzysta pusta, żeby nie było tekstu na odwrocie
+\clearpage{\mbox{}\pagestyle{empty}\cleardoublepage}
 
 \end{document}
