@@ -62,13 +62,16 @@
     bar-shortcuts
 }
 
-\pagestyle{fancy}
-\fancyhf{}
-\fancyhead[L]{Jakieś piosenki}
-\fancyhead[R]{\leftmark}
-\fancyfoot[LE,RO]{\Large\thepage}
-\fancyfoot[LO]{\includegraphics[width=1.5cm]{kolo.png}}
-\fancyfoot[RE]{\includegraphics[width=1.5cm]{kotwica.png}}
+%\pagestyle{fancy}
+\fancypagestyle{spiewnik}{%
+    \fancyhf{}
+    \fancyhead[L]{Jakieś piosenki}
+    \fancyhead[R]{\leftmark}
+    \fancyfoot[LE,RO]{\Large\thepage}
+    \fancyfoot[LO]{\includegraphics[width=1.5cm]{kolo.png}}
+    \fancyfoot[RE]{\includegraphics[width=1.5cm]{kotwica.png}}
+}
+\pagestyle{spiewnik}
 
 \renewcommand{\cftdot}{\ensuremath{\sim}}
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
@@ -111,10 +114,10 @@
 \input{songs/mietek_folk-chlopcy_z_botany_bay.tex}
 \input{songs/north_cape-kapitan_kidd.tex}
 \input{songs/poszedlem_na_dziob-pij_za_starego.tex}
+\input{songs/cztery_refy-press_gang(branka).tex}
 \input{songs/ekt_gdynia-stary_bryg.tex}
 \input{songs/dom_o_zielonych_progach-pojde_w_poloniny.tex}
 \input{songs/gotye-premium_boy(somebody).tex}
-\input{songs/cztery_refy-press_gang(branka).tex}
 \input{songs/jacek_kaczmarski-1788}
 
 % Ostatnia strona parzysta pusta, żeby nie było tekstu na odwrocie
