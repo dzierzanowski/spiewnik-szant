@@ -1,4 +1,4 @@
-\documentclass[11pt, twoside]{article}
+\documentclass[11pt, twoside]{book}
 \usepackage[full]{leadsheets}
 \usepackage[a4paper,  hmargin=1.5cm, vmargin=3cm]{geometry}
 \usepackage{multicol}
@@ -9,6 +9,7 @@
 \usepackage{tocloft}
 \usepackage{fancyhdr}
 \usepackage{tikzpagenodes}
+\usepackage{titlesec}
 \thispagestyle{empty}
 
 %\usepackage[default]{lato}
@@ -62,11 +63,15 @@
     bar-shortcuts
 }
 
-%\pagestyle{fancy}
+\fancypagestyle{plain}{%
+    \fancyhf{}
+    \fancyhead[L]{Jakieś piosenki}
+    \fancyfoot[LE,RO]{\Large\thepage}
+}
 \fancypagestyle{spiewnik}{%
     \fancyhf{}
     \fancyhead[L]{Jakieś piosenki}
-    \fancyhead[R]{\leftmark}
+    %\fancyhead[R]{}
     \fancyfoot[LE,RO]{\Large\thepage}
     \fancyfoot[LO]{\includegraphics[width=1.5cm]{images/kolo.png}}
     \fancyfoot[RE]{\includegraphics[width=1.5cm]{images/kotwica.png}}
@@ -75,6 +80,11 @@
 
 \renewcommand{\cftdot}{\ensuremath{\sim}}
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+
+% Usunięcie numeru rozdziału sprzed numeru sekcji
+%\renewcommand{\thesection}{\arabic{section}}
+
+\titleformat{\chapter}[block]{\centering\vspace{6cm}}{}{0pt}{\Huge\bfseries}
 
 \begin{document}
 
@@ -111,6 +121,10 @@
 
 \tableofcontents
 
+\chapter{Szanty}
+\begin{center}
+    \includegraphics[width=0.5\textwidth]{images/wezel.png}
+\end{center}
 \input{songs/mietek_folk-chlopcy_z_botany_bay.tex}
 \input{songs/ryczace_dwudziestki-few_days.tex}
 \input{songs/north_cape-kapitan_kidd.tex}
@@ -118,12 +132,21 @@
 \input{songs/cztery_refy-press_gang(branka).tex}
 \input{songs/ekt_gdynia-stary_bryg.tex}
 \input{songs/mechanicy_szanty-stary_wrak.tex}
-\input{songs/jacek_kaczmarski-1788}
-\input{songs/andrzej_zaucha-bylas_serca_biciem.tex}
-\input{songs/dom_o_zielonych_progach-pojde_w_poloniny.tex}
-\input{songs/gotye-premium_boy(somebody).tex}
-\input{songs/marcin_przybylowicz-wilcza_zamiec.tex}
 
+\chapter{Poezja śpiewana}
+\begin{center}
+    \includegraphics[width=0.5\textwidth]{images/chatka.jpg}
+\end{center}
+\input{songs/dom_o_zielonych_progach-pojde_w_poloniny.tex}
+\input{songs/marcin_przybylowicz-wilcza_zamiec.tex}
+\input{songs/jacek_kaczmarski-1788}
+
+\chapter{Pop}
+\begin{center}
+    \includegraphics[width=0.4\textwidth]{images/pop.png}
+\end{center}
+\input{songs/andrzej_zaucha-bylas_serca_biciem.tex}
+\input{songs/gotye-premium_boy(somebody).tex}
 
 % Ostatnia strona parzysta pusta, żeby nie było tekstu na odwrocie
 \clearpage{\mbox{}\pagestyle{empty}\cleardoublepage}
