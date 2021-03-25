@@ -63,20 +63,34 @@
     bar-shortcuts
 }
 
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+
 \fancypagestyle{plain}{%
     \fancyhf{}
     \fancyhead[L]{Jakieś piosenki}
     \fancyfoot[LE,RO]{\Large\thepage}
 }
-\fancypagestyle{spiewnik}{%
-    \fancyhf{}
-    \fancyhead[L]{Jakieś piosenki}
-    %\fancyhead[R]{}
-    \fancyfoot[LE,RO]{\Large\thepage}
+\fancypagestyle{szanty}{%
+    \pagestyle{plain}
+    %\fancyhf{}
+    %\fancyhead[L]{Jakieś piosenki}
+    \fancyhead[R]{Szanty}
+    %\fancyfoot[LE,RO]{\Large\thepage}
     \fancyfoot[LO]{\includegraphics[width=1.5cm]{images/kolo.png}}
     \fancyfoot[RE]{\includegraphics[width=1.5cm]{images/kotwica.png}}
 }
-\pagestyle{spiewnik}
+\fancypagestyle{poezja}{%
+    \pagestyle{plain}
+    \fancyhead[R]{Poezja śpiewana}
+    \fancyfoot[LO]{\includegraphics[width=1.5cm]{images/wilk.png}}
+    \fancyfoot[RE]{\includegraphics[width=1.5cm]{images/drzewa.png}}
+}
+\fancypagestyle{pop}{%
+    \pagestyle{plain}
+    \fancyhead[R]{Pop}
+    \fancyfoot[LO]{\includegraphics[width=1.5cm]{images/gwiazdy.png}}
+    \fancyfoot[RE]{\includegraphics[width=1.5cm]{images/gitara.png}}
+}
 
 \renewcommand{\cftdot}{\ensuremath{\sim}}
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
@@ -125,6 +139,7 @@
 \begin{center}
     \includegraphics[width=0.5\textwidth]{images/wezel.png}
 \end{center}
+\pagestyle{szanty}
 \input{songs/mietek_folk-chlopcy_z_botany_bay.tex}
 \input{songs/ryczace_dwudziestki-few_days.tex}
 \input{songs/north_cape-kapitan_kidd.tex}
@@ -137,14 +152,16 @@
 \begin{center}
     \includegraphics[width=0.5\textwidth]{images/chatka.jpg}
 \end{center}
+\pagestyle{poezja}
 \input{songs/dom_o_zielonych_progach-pojde_w_poloniny.tex}
 \input{songs/marcin_przybylowicz-wilcza_zamiec.tex}
-\input{songs/jacek_kaczmarski-1788}
+\input{songs/jacek_kaczmarski-1788}\newpage\pagestyle{poezja}
 
 \chapter{Pop}
 \begin{center}
     \includegraphics[width=0.4\textwidth]{images/pop.png}
 \end{center}
+\pagestyle{pop}
 \input{songs/andrzej_zaucha-bylas_serca_biciem.tex}
 \input{songs/gotye-premium_boy(somebody).tex}
 
