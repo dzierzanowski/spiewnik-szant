@@ -43,6 +43,9 @@
             \ifsongproperty{music}{%
                 Muzyka: \songproperty{music} \\%
                 }{}%
+            \ifsongproperty{lyrics}{%
+                Tekst: \songproperty{lyrics} \\%
+                }{}%
             \ifsongproperty{interpret}{%
                 Interpretacja: \songproperty{interpret} \\%
                 }{}%
@@ -61,6 +64,11 @@
     align-chords={l},
     capo-nr-format=arabic,
     bar-shortcuts
+}
+\setchords{%
+    minor={lowercase},
+    input-notation=german,
+    output-notation=german
 }
 
 \renewcommand{\chaptermark}[1]{\markboth{#1}{}}
@@ -147,7 +155,7 @@
 \input{songs/cztery_refy-press_gang(branka).tex}
 \input{songs/ekt_gdynia-stary_bryg.tex}
 \input{songs/mechanicy_szanty-stary_wrak.tex}
-\input{songs/szesnascie_ton}
+\input{songs/marek_szurawski-szesnascie_ton}\newpage\pagestyle{szanty}
 
 \chapter{Poezja śpiewana}
 \begin{center}
@@ -155,10 +163,9 @@
 \end{center}
 \pagestyle{poezja}
 \input{songs/dom_o_zielonych_progach-pojde_w_poloniny.tex}
-\input{songs/marcin_przybylowicz-wilcza_zamiec.tex}
 \input{songs/wolna_grupa_bukowina-sielanka_o_domu}
-\input{songs/jacek_kaczmarski-1788}
-\newpage\pagestyle{poezja}
+\input{songs/marcin_przybylowicz-wilcza_zamiec.tex}
+\input{songs/jacek_kaczmarski-1788}\newpage\pagestyle{poezja}
 
 \chapter{Pop}
 \begin{center}
