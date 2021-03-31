@@ -10,6 +10,7 @@
 \usepackage{fancyhdr}
 \usepackage{tikzpagenodes}
 \usepackage{titlesec}
+\usepackage{tabularx}
 \thispagestyle{empty}
 
 %\usepackage[default]{lato}
@@ -130,18 +131,64 @@
         Wydawnictwo Kis Inkris \\
         Warszawa, 2021
 
-        \vspace{0.5cm}
+        %\vspace{0.5cm}
 
-        \footnotesize
-        https://github.com/dzierzanowski/spiewnik-szant
+        %\footnotesize
+        %https://github.com/dzierzanowski/spiewnik-szant
 
-        \begin{tikzpicture}[remember picture,overlay,shift={(current page.south east)}]
-            \node[anchor=south east,xshift=0cm,yshift=0cm]{\includegraphics[width=3.5cm]{images/qr.png}};
-        \end{tikzpicture}
+        %\begin{tikzpicture}[remember picture,overlay,shift={(current page.south east)}]
+        %    \node[anchor=south east,xshift=0cm,yshift=0cm]{\includegraphics[width=3.5cm]{images/qr.png}};
+        %\end{tikzpicture}
     \end{center}
 \end{titlepage}
 
 \tableofcontents
+\vfill
+\renewcommand{\tabularxcolumn}[1]{>{\small}b{#1}}
+\begin{tabularx}{\textwidth}{%
+        @{}
+        >{\raggedright\arraybackslash}X
+        %>{\raggedright\arraybackslash}b{.5\linewidth}
+        @{}
+        >{\raggedleft\arraybackslash}X
+        %>{\raggedleft\arraybackslash}b{.5\linewidth}
+    }
+    \footnotesize
+    Kamil Dzierżanowski --- opracowanie, skład, korekta
+
+    Paweł Kulig --- opracowanie
+
+    \medskip
+
+    https://github.com/dzierzanowski/spiewnik-szant
+
+    &
+
+    Pobierz śpiewnik online:
+
+    \includegraphics[width=3cm]{images/qr.png}
+\end{tabularx}
+
+%\begin{tabularx}{\textwidth}{%
+%        @{}
+%        >{\raggedright\arraybackslash}X
+%        %>{\raggedright\arraybackslash}b{.5\linewidth}
+%        @{}
+%        >{\raggedleft\arraybackslash}X
+%        %>{\raggedleft\arraybackslash}b{.5\linewidth}
+%    }
+%    \footnotesize
+%    {\begin{tabular}{>{\raggedright\arraybackslash}b{\linewidth}}
+%        Kamil Dzierżanowski --- opracowanie, skład, korekta \\
+%        Paweł Kulig --- opracowanie
+%    \end{tabular}}
+%    &
+%    {\begin{tabular}{c}
+%        Pobierz śpiewnik online: \\
+%        \includegraphics[width=3cm]{images/qr.png}
+%        %\caption{test}
+%    \end{tabular}}
+%\end{tabularx}
 
 \chapter{Szanty}
 \begin{center}
