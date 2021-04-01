@@ -1,5 +1,4 @@
 *.pdf
-!spiewnik.pdf
 *.log
 *.aux
 *.out
