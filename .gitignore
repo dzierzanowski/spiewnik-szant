@@ -5,3 +5,4 @@
 *.out
 *.toc
 *.gz
+!spiewnik.pdf
