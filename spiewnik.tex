@@ -12,6 +12,7 @@
 \usepackage{tikzpagenodes}
 \usepackage{titlesec}
 \usepackage{tabularx}
+\usepackage{adjustbox}
 \thispagestyle{empty}
 
 %\usepackage[default]{lato}
@@ -110,6 +111,9 @@
 
 \titleformat{\chapter}[block]{\centering\vspace{6cm}}{}{0pt}{\Huge\bfseries}
 
+\newversetype{riff}[name={Riff}, numbered=false, named=true]
+
+
 \begin{document}
 
 \begin{titlepage}
@@ -146,6 +150,7 @@
 \tableofcontents
 \vfill
 \renewcommand{\tabularxcolumn}[1]{>{\small}b{#1}}
+\begin{adjustbox}{width={\textwidth}, keepaspectratio}
 \begin{tabularx}{\textwidth}{%
         @{}
         >{\raggedright\arraybackslash}X
@@ -167,6 +172,7 @@
 
     \includegraphics[width=3cm]{images/qr.png}
 \end{tabularx}
+\end{adjustbox}
 
 %\begin{tabularx}{\textwidth}{%
 %        @{}
@@ -215,15 +221,15 @@
 \end{center}
 \pagestyle{poezja}
 \input{songs/ekt_gdynia-ballada_na_zle_drogi}
+\input{songs/marek_grechuta-dni_ktorych_nie_znamy}\newpage\pagestyle{poezja}
 \input{songs/tomasz_lewandowski-jaka_jestes}
 \input{songs/wolna_grupa_bukowina-majster_bieda}
 \input{songs/agnieszka_osiecka-nim_wstanie_dzien}
 \input{songs/wolna_grupa_bukowina-pejzaze_harasymowiczowskie}
 \input{songs/dom_o_zielonych_progach-pojde_w_poloniny}
 \input{songs/wolna_grupa_bukowina-sielanka_o_domu}
+\input{songs/marek_grechuta-swiecie_nasz}\newpage\pagestyle{poezja}
 \input{songs/marcin_przybylowicz-wilcza_zamiec}
-\input{songs/marek_grechuta-swiecie_nasz}
-\input{songs/marek_grechuta-dni_ktorych_nie_znamy}
 \input{songs/jacek_kaczmarski-1788}\newpage\pagestyle{poezja}
 
 \chapter{Pop}
@@ -232,14 +238,14 @@
 \end{center}
 \pagestyle{pop}
 \input{songs/andrzej_zaucha-bylas_serca_biciem}
+\input{songs/brodka-granda}
 \input{songs/linkin_park-in_the_end}
+\input{songs/edyta_gorniak-kolorowy_wiatr}
+\input{songs/dawid_podsiadlo-malociasteczkowy}
+\input{songs/monika_brodka-mial_byc_slub}
 \input{songs/strachy_na_lachy-pila_tango}
 \input{songs/breakout-pomaluj_moje_sny}
-\input{songs/monika_brodka-mial_byc_slub}
-\input{songs/dawid_podsiadlo-malociasteczkowy}
 \input{songs/gotye-premium_boy(somebody)}
-\input{songs/edyta_gorniak-kolorowy_wiatr}
-\input{songs/brodka-granda}
 \input{songs/myslovitz-scenariusz_dla_moich_sasiadow}
 
 % Ostatnia strona parzysta pusta, żeby nie było tekstu na odwrocie
