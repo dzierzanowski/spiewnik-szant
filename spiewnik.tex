@@ -1,6 +1,6 @@
 \documentclass[11pt, twoside]{book}
 \usepackage[full]{leadsheets}
-\usepackage[a4paper,  hmargin=1.5cm, vmargin=3cm, head=14pt, foot=57pt]{geometry}
+\usepackage[a4paper,  hmargin=1.5cm, vmargin=3cm, head=14pt, foot=50pt]{geometry}
 \usepackage{multicol}
 \usepackage[polish]{babel}
 \usepackage{array}
@@ -15,6 +15,12 @@
 \usepackage{adjustbox}
 \usepackage{tipa}
 \usepackage{ifxetex}
+\usepackage[%
+    left = \glqq,%
+    right = \grqq,%
+    leftsub = «,%
+    rightsub = »%
+]{dirtytalk}
 \thispagestyle{empty}
 
 \ifxetex%
@@ -94,20 +100,20 @@
     %\fancyhead[L]{Jakieś piosenki}
     \fancyhead[R]{Szanty}
     %\fancyfoot[LE,RO]{\Large\thepage}
-    \fancyfoot[LO]{\includegraphics[width=1.5cm]{images/kolo.png}}
-    \fancyfoot[RE]{\includegraphics[width=1.5cm]{images/kotwica.png}}
+    \fancyfoot[LO]{\includegraphics[height=45pt]{images/kolo.png}}
+    \fancyfoot[RE]{\includegraphics[height=45pt]{images/kotwica.png}}
 }
 \fancypagestyle{poezja}{%
     \pagestyle{plain}
     \fancyhead[R]{Poezja śpiewana}
-    \fancyfoot[LO]{\includegraphics[width=1.5cm]{images/wilk.png}}
-    \fancyfoot[RE]{\includegraphics[width=1.5cm]{images/drzewa.png}}
+    \fancyfoot[LO]{\includegraphics[height=45pt]{images/wilk.png}}
+    \fancyfoot[RE]{\includegraphics[height=45pt]{images/drzewa.png}}
 }
 \fancypagestyle{pop}{%
     \pagestyle{plain}
     \fancyhead[R]{Pop}
-    \fancyfoot[LO]{\includegraphics[width=1.5cm]{images/gwiazdy.png}}
-    \fancyfoot[RE]{\includegraphics[width=1.5cm]{images/gitara.png}}
+    \fancyfoot[LO]{\includegraphics[height=45pt]{images/gwiazdy.png}}
+    \fancyfoot[RE]{\includegraphics[height=45pt]{images/gitara.png}}
 }
 
 \renewcommand{\cftdot}{\ensuremath{\sim}}
@@ -222,8 +228,9 @@
 \input{songs/cztery_refy-press_gang(branka)}
 \input{songs/zejman_garkumpel-samantha}
 \input{songs/ekt_gdynia-stary_bryg}
-\input{songs/mechanicy_szanty-stary_wrak}
+\input{songs/mechanicy_shanty-stary_wrak}
 \input{songs/marek_szurawski-szesnascie_ton}\newpage\pagestyle{szanty}
+\input{songs/smugglers-szkuner_im_alone}
 
 \chapter{Poezja śpiewana}
 \begin{center}
