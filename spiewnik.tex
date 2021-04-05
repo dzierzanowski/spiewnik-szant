@@ -13,7 +13,14 @@
 \usepackage{titlesec}
 \usepackage{tabularx}
 \usepackage{adjustbox}
+\usepackage{tipa}
+\usepackage{ifxetex}
 \thispagestyle{empty}
+
+\ifxetex%
+    \usepackage{substitutefont}
+    \substitutefont{T3}{\rmdefault}{cmr}
+\fi
 
 %\usepackage[default]{lato}
 %\usepackage[T1]{fontenc}
@@ -113,6 +120,8 @@
 
 \newversetype{riff}[name={Riff}, numbered=false, named=true]
 
+\counterwithin*{footnote}{section}
+
 
 \begin{document}
 
@@ -203,6 +212,7 @@
 \input{songs/mietek_folk-chlopcy_z_botany_bay}
 \input{songs/ryczace_dwudziestki-few_days}
 \input{songs/trzy_majtki-gdzie_ta_keja}
+\input{songs/ryczace_dwudziestki-hiszpanskie_dziewczyny}\newpage\pagestyle{szanty}
 \input{songs/ryczace_dwudziestki-jasnowlosa}
 \input{songs/north_cape-kapitan_kidd}
 \input{songs/ekt_gdynia-morze_moje_morze}
