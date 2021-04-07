@@ -6,4 +6,5 @@
 *.toc
 *.gz
 !spiewnik.pdf
+!appendix/aneks.pdf
 dirtytalk*
