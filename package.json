@@ -1,0 +1,27 @@
+{
+  "name": "spiewnik-szant",
+  "version": "1.0.0",
+  "description": "Śpiewnik szant i innych utworów do robienia zamieszania na ognisku.",
+  "dependencies": {
+    "@svgdotjs/svg.js": "^3.0.16",
+    "argparse": "^2.0.1",
+    "domino": "^2.1.6",
+    "save-svg-as-png": "^1.4.17",
+    "svgdom": "^0.1.8",
+    "svguitar": "^1.12.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dzierzanowski/spiewnik-szant.git"
+  },
+  "author": "Kamil Dzierżanowski",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/dzierzanowski/spiewnik-szant/issues"
+  },
+  "homepage": "https://github.com/dzierzanowski/spiewnik-szant#readme"
+}

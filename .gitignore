@@ -7,3 +7,4 @@
 *.toc
 *.gz
 dirtytalk*
+node_modules
