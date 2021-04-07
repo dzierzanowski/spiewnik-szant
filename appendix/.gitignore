@@ -1,9 +1,0 @@
-*.pdf
-!spiewnik.pdf
-*.log
-*.aux
-*.out
-*.toc
-*.gz
-!spiewnik.pdf
-dirtytalk*
