@@ -1,10 +1,9 @@
 *.pdf
 !spiewnik.pdf
+!aneks.pdf
 *.log
 *.aux
 *.out
 *.toc
 *.gz
-!spiewnik.pdf
-!appendix/aneks.pdf
 dirtytalk*
