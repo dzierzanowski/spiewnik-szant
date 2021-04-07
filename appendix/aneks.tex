@@ -1,0 +1,216 @@
+\documentclass[11pt, twoside]{book}
+\usepackage[full]{leadsheets}
+\usepackage[a4paper,  hmargin=1.5cm, vmargin=3cm, head=14pt, foot=50pt]{geometry}
+\usepackage{multicol}
+\usepackage[polish]{babel}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{tocloft}
+\usepackage[toc]{multitoc}
+\usepackage{fancyhdr}
+\usepackage{tikzpagenodes}
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage{adjustbox}
+\usepackage{tipa}
+\usepackage{ifxetex}
+\usepackage[%
+    left = \glqq,%
+    right = \grqq,%
+    leftsub = «,%
+    rightsub = »%
+]{dirtytalk}
+
+\thispagestyle{empty}
+
+\ifxetex%
+    \usepackage{substitutefont}
+    \substitutefont{T3}{\rmdefault}{cmr}
+\fi
+
+%\usepackage[default]{lato}
+%\usepackage[T1]{fontenc}
+
+\selectlanguage{polish}
+\DeclareTranslation{Polish}{leadsheets/chorus}{Ref.}
+\DeclareTranslation{Polish}{leadsheets/interlude}{Przej.}
+\DeclareTranslation{Polish}{leadsheets/lyrics}{tekst}
+\DeclareTranslation{Polish}{leadsheets/verse}{Zwr.}
+%\DeclareTranslation{Polish}{leadsheets/capo}{Kapo}
+\DeclareTranslation{Polish}{leadsheets/fret}{próg}
+
+% Tytuł spisu treści
+\addto\captionspolish{\renewcommand*\contentsname{Jakieś piosenki}}
+
+\definesongtitletemplate{custom}{%
+    \let\clearpage\relax
+    \ifsongmeasuring%
+        {\section*}
+        {\section}%
+        {\songproperty{title}}%
+    \begingroup\footnotesize
+        \begin{tabular}{%
+                @{}
+                >{\raggedright\arraybackslash}p{.5\linewidth}
+                @{}
+                >{\raggedleft\arraybackslash}p{.5\linewidth}
+                @{}
+            }
+            \ifsongproperty{music}{%
+                Muzyka: \songproperty{music} \\%
+                }{}%
+            \ifsongproperty{lyrics}{%
+                Tekst: \songproperty{lyrics} \\%
+                }{}%
+            \ifsongproperty{interpret}{%
+                Interpretacja: \songproperty{interpret} \\%
+                }{}%
+            \ifsongproperty{capo}{%
+                & \capo{} \\%
+                }{}%
+        \end{tabular}%
+        \par
+    \endgroup
+}
+
+\setleadsheets{%
+    title-template = custom,
+    verse/numbered,
+    remember-chords=false,
+    align-chords={l},
+    capo-nr-format=arabic,
+    bar-shortcuts
+}
+\setchords{%
+    minor={lowercase},
+    input-notation=german,
+    output-notation=german
+}
+
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+
+\fancypagestyle{plain}{%
+    \fancyhf{}
+    \fancyhead[L]{Jakieś piosenki}
+    \fancyfoot[LE,RO]{\Large\thepage}
+}
+\fancypagestyle{szanty}{%
+    \pagestyle{plain}
+    %\fancyhf{}
+    %\fancyhead[L]{Jakieś piosenki}
+    \fancyhead[R]{Szanty}
+    %\fancyfoot[LE,RO]{\Large\thepage}
+    \fancyfoot[LO]{\includegraphics[height=45pt]{images/kolo.png}}
+    \fancyfoot[RE]{\includegraphics[height=45pt]{images/kotwica.png}}
+}
+\fancypagestyle{poezja}{%
+    \pagestyle{plain}
+    \fancyhead[R]{Poezja śpiewana}
+    \fancyfoot[LO]{\includegraphics[height=45pt]{images/wilk.png}}
+    \fancyfoot[RE]{\includegraphics[height=45pt]{images/drzewa.png}}
+}
+\fancypagestyle{pop}{%
+    \pagestyle{plain}
+    \fancyhead[R]{Pop}
+    \fancyfoot[LO]{\includegraphics[height=45pt]{images/gwiazdy.png}}
+    \fancyfoot[RE]{\includegraphics[height=45pt]{images/gitara.png}}
+}
+
+\renewcommand{\cftdot}{\ensuremath{\sim}}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+
+% Usunięcie numeru rozdziału sprzed numeru sekcji
+%\renewcommand{\thesection}{\arabic{section}}
+
+\titleformat{\chapter}[block]{\centering\vspace{6cm}}{}{0pt}{\Huge\bfseries}
+
+\newversetype{riff}[name={Riff}, numbered=false, named=true]
+
+\counterwithin*{footnote}{section}
+
+
+\begin{document}
+
+\begin{titlepage}
+    \begin{center}
+        \vspace*{5cm}
+        
+        \includegraphics[height=8cm]{images/front-obrazek.png}
+
+        \vspace{1.5cm}
+
+        \Huge\textbf{Jakieś piosenki}
+        
+        \vspace{0.5cm}
+        \LARGE Aneks dla niegrających na gitarze \\
+        \LARGE Wydanie pierwsze
+        
+        \vfill
+
+        \Large
+        Wydawnictwo Kis Inkris \\
+        Warszawa, 2021
+
+        %\vspace{0.5cm}
+
+        %\footnotesize
+        %https://github.com/dzierzanowski/spiewnik-szant
+
+        %\begin{tikzpicture}[remember picture,overlay,shift={(current page.south east)}]
+        %    \node[anchor=south east,xshift=0cm,yshift=0cm]{\includegraphics[width=3.5cm]{images/qr.png}};
+        %\end{tikzpicture}
+    \end{center}
+\end{titlepage}
+
+\tableofcontents
+\vfill
+\renewcommand{\tabularxcolumn}[1]{>{\small}b{#1}}
+\begin{adjustbox}{width={\textwidth}, keepaspectratio}
+\begin{tabularx}{\textwidth}{%
+        @{}
+        >{\raggedright\arraybackslash}X
+        @{}
+        >{\raggedleft\arraybackslash}X
+    }
+    \footnotesize
+    Kamil Dzierżanowski --- opracowanie, skład, korekta
+
+    Paweł Kulig --- opracowanie
+
+    \medskip
+
+    https://github.com/dzierzanowski/spiewnik-szant
+
+    &
+
+    Pobierz śpiewnik online:
+
+    \includegraphics[width=3cm]{images/qr.png}
+\end{tabularx}
+\end{adjustbox}
+
+\chapter{Szanty}
+\begin{center}
+    \includegraphics[width=0.5\textwidth]{images/wezel.png}
+\end{center}
+\pagestyle{szanty}
+\input{songs/cztery_refy-press_gang(branka)}
+\input{songs/ryczace_dwudziestki-few_days}
+
+\chapter{Poezja śpiewana}
+\begin{center}
+    \includegraphics[width=0.5\textwidth]{images/chatka.jpg}
+\end{center}
+\pagestyle{poezja}
+
+\chapter{Pop}
+\begin{center}
+    \includegraphics[width=0.4\textwidth]{images/pop.png}
+\end{center}
+\pagestyle{pop}
+
+% Ostatnia strona parzysta pusta, żeby nie było tekstu na odwrocie
+\clearpage{\mbox{}\pagestyle{empty}\cleardoublepage}
+
+\end{document}
