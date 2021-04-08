@@ -14,7 +14,8 @@ niektórych utworów.
 
 Release (LTS): TBD
 
-Master (nightly): [spiewnik.pdf](https://github.com/dzierzanowski/spiewnik-szant/raw/master/spiewnik.pdf)
+Master (nightly): [spiewnik.pdf](https://github.com/dzierzanowski/spiewnik-szant/raw/master/spiewnik.pdf), 
+[aneks.pdf](https://github.com/dzierzanowski/spiewnik-szant/raw/master/aneks.pdf)
 
 Pozostałe wydania znajdziesz w sekcji "Releases".
 
