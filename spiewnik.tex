@@ -43,6 +43,7 @@
 % Tytuł spisu treści
 \addto\captionspolish{\renewcommand*\contentsname{Jakieś piosenki}}
 
+\definesongproperty{annex}
 \definesongtitletemplate{custom}{%
     \let\clearpage\relax
     \ifsongmeasuring%
@@ -58,8 +59,13 @@
                 @{}
             }
             \ifsongproperty{music}{%
-                Muzyka: \songproperty{music} \\%
+                Muzyka: \songproperty{music}
                 }{}%
+            \ifsongproperty{annex}{%
+                &
+                \smash{\includegraphics[height=30pt]{images/aneks-ref.png}}
+                }{}%
+            \ifsongproperty{music}{\\}{\ifsongproperty{annex}{\\}{}}%
             \ifsongproperty{lyrics}{%
                 Tekst: \songproperty{lyrics} \\%
                 }{}%
@@ -97,10 +103,7 @@
 }
 \fancypagestyle{szanty}{%
     \pagestyle{plain}
-    %\fancyhf{}
-    %\fancyhead[L]{Jakieś piosenki}
     \fancyhead[R]{Szanty}
-    %\fancyfoot[LE,RO]{\Large\thepage}
     \fancyfoot[LO]{\includegraphics[height=45pt]{images/kolo.png}}
     \fancyfoot[RE]{\includegraphics[height=45pt]{images/kotwica.png}}
 }
@@ -197,26 +200,6 @@
 \end{tabularx}
 \end{adjustbox}
 
-%\begin{tabularx}{\textwidth}{%
-%        @{}
-%        >{\raggedright\arraybackslash}X
-%        %>{\raggedright\arraybackslash}b{.5\linewidth}
-%        @{}
-%        >{\raggedleft\arraybackslash}X
-%        %>{\raggedleft\arraybackslash}b{.5\linewidth}
-%    }
-%    \footnotesize
-%    {\begin{tabular}{>{\raggedright\arraybackslash}b{\linewidth}}
-%        Kamil Dzierżanowski --- opracowanie, skład, korekta \\
-%        Paweł Kulig --- opracowanie
-%    \end{tabular}}
-%    &
-%    {\begin{tabular}{c}
-%        Pobierz śpiewnik online: \\
-%        \includegraphics[width=3cm]{images/qr.png}
-%        %\caption{test}
-%    \end{tabular}}
-%\end{tabularx}
 
 \chapter{Szanty}
 \begin{center}
