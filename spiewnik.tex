@@ -16,8 +16,8 @@
 \usepackage{tipa}
 \usepackage{ifxetex}
 \usepackage[%
-    left = \glqq,%
-    right = \grqq,%
+    left = „,%
+    right = “,%
     leftsub = «,%
     rightsub = »%
 ]{dirtytalk}
@@ -43,6 +43,7 @@
 % Tytuł spisu treści
 \addto\captionspolish{\renewcommand*\contentsname{Jakieś piosenki}}
 
+\definesongproperty{annex}
 \definesongtitletemplate{custom}{%
     \let\clearpage\relax
     \ifsongmeasuring%
@@ -58,8 +59,13 @@
                 @{}
             }
             \ifsongproperty{music}{%
-                Muzyka: \songproperty{music} \\%
+                Muzyka: \songproperty{music}
                 }{}%
+            \ifsongproperty{annex}{%
+                &
+                \smash{\includegraphics[height=40pt]{images/aneks-ref.png}}
+                }{}%
+            \ifsongproperty{music}{\\}{\ifsongproperty{annex}{\\}{}}%
             \ifsongproperty{lyrics}{%
                 Tekst: \songproperty{lyrics} \\%
                 }{}%
@@ -97,10 +103,7 @@
 }
 \fancypagestyle{szanty}{%
     \pagestyle{plain}
-    %\fancyhf{}
-    %\fancyhead[L]{Jakieś piosenki}
     \fancyhead[R]{Szanty}
-    %\fancyfoot[LE,RO]{\Large\thepage}
     \fancyfoot[LO]{\includegraphics[height=45pt]{images/kolo.png}}
     \fancyfoot[RE]{\includegraphics[height=45pt]{images/kotwica.png}}
 }
@@ -184,36 +187,19 @@
 
     \smallskip
 
+    \urlstyle{same}
     \url{https://github.com/dzierzanowski/spiewnik-szant}
 
     &
 
     Pobierz śpiewnik online:
 
+    \smallskip
+
     \includegraphics[width=3cm]{images/qr.png}
 \end{tabularx}
 \end{adjustbox}
 
-%\begin{tabularx}{\textwidth}{%
-%        @{}
-%        >{\raggedright\arraybackslash}X
-%        %>{\raggedright\arraybackslash}b{.5\linewidth}
-%        @{}
-%        >{\raggedleft\arraybackslash}X
-%        %>{\raggedleft\arraybackslash}b{.5\linewidth}
-%    }
-%    \footnotesize
-%    {\begin{tabular}{>{\raggedright\arraybackslash}b{\linewidth}}
-%        Kamil Dzierżanowski --- opracowanie, skład, korekta \\
-%        Paweł Kulig --- opracowanie
-%    \end{tabular}}
-%    &
-%    {\begin{tabular}{c}
-%        Pobierz śpiewnik online: \\
-%        \includegraphics[width=3cm]{images/qr.png}
-%        %\caption{test}
-%    \end{tabular}}
-%\end{tabularx}
 
 \chapter{Szanty}
 \begin{center}
@@ -222,11 +208,13 @@
 \pagestyle{szanty}
 \input{songs/mechanicy_shanty-bitwa}
 \input{songs/mietek_folk-chlopcy_z_botany_bay}
+\input{songs/trzy_majtki-cztery_piwka}
 \input{songs/krzysztof_klenczon-dziesiec_w_skali_beauforta}
 \input{songs/ryczace_dwudziestki-few_days}
 \input{songs/trzy_majtki-gdzie_ta_keja}
 \input{songs/ryczace_dwudziestki-hiszpanskie_dziewczyny}\newpage\pagestyle{szanty}
 \input{songs/ryczace_dwudziestki-jasnowlosa}
+\input{songs/ekt_gdynia-ja_stawiam}
 \input{songs/north_cape-kapitan_kidd}
 \input{songs/ekt_gdynia-morze_moje_morze}
 \input{songs/artur_andrus-nazywali_go_marynarz}
