@@ -29,7 +29,6 @@
     \substitutefont{T3}{\rmdefault}{cmr}
 \fi
 
-%\usepackage[default]{lato}
 %\usepackage[T1]{fontenc}
 
 \selectlanguage{polish}
@@ -43,7 +42,9 @@
 % Tytuł spisu treści
 \addto\captionspolish{\renewcommand*\contentsname{Jakieś piosenki}}
 
+% Flaga oznaczająca, czy dany utwór ma mieć symbol odnoszący do aneksu
 \definesongproperty{annex}
+
 \definesongtitletemplate{custom}{%
     \let\clearpage\relax
     \ifsongmeasuring%
@@ -83,15 +84,15 @@
 \setleadsheets{%
     title-template = custom,
     verse/numbered,
-    remember-chords=false,
-    align-chords={l},
-    capo-nr-format=arabic,
+    remember-chords = false,
+    align-chords = {l},
+    capo-nr-format = arabic,
     bar-shortcuts
 }
 \setchords{%
-    minor={lowercase},
-    input-notation=german,
-    output-notation=german
+    minor = {lowercase},
+    input-notation = german,
+    output-notation = german
 }
 
 \renewcommand{\chaptermark}[1]{\markboth{#1}{}}
@@ -147,22 +148,22 @@
         
         \vspace{0.5cm}
         
-        \LARGE Wydanie pierwsze
+        \large Wydanie pierwsze
         
         \vfill
 
-        \Large
+        \large
         Wydawnictwo Kis Inkris \\
         Warszawa, 2021
 
-        %\vspace{0.5cm}
+        \vspace{0.8cm}
 
-        %\footnotesize
-        %https://github.com/dzierzanowski/spiewnik-szant
+        \footnotesize
+        \textit{%
+        Gdzie słyszysz śpiew, tam wejdź, tam dobre serce mają \\
+        Żli ludzie, wierzaj mi, ci nigdy nie śpiewają} \medskip \\
+        Johann Gottfried Seume, \textit{Die Gesänge}
 
-        %\begin{tikzpicture}[remember picture,overlay,shift={(current page.south east)}]
-        %    \node[anchor=south east,xshift=0cm,yshift=0cm]{\includegraphics[width=3.5cm]{images/qr.png}};
-        %\end{tikzpicture}
     \end{center}
 \end{titlepage}
 
@@ -199,7 +200,6 @@
     \includegraphics[width=3cm]{images/qr.png}
 \end{tabularx}
 \end{adjustbox}
-
 
 \chapter{Szanty}
 \begin{center}
