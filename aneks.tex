@@ -128,7 +128,7 @@
 \newversetype{riff}[name={Riff}, numbered=false, named=true]
 
 \counterwithin*{footnote}{section}
-
+\newcommand{\tqs}{\textquotesingle}
 
 \begin{document}
 
@@ -195,16 +195,32 @@
     \includegraphics[width=0.5\textwidth]{images/wezel.png}
 \end{center}
 \pagestyle{szanty}
+\setcounter{section}{2}
+\input{songs-alt/mietek_folk-chlopcy_z_botany_bay}
+\setcounter{section}{4}
+\input{songs-alt/krzysztof_klenczon-dziesiec_w_skali_beauforta}
 \setcounter{section}{5}  % Jeden mniej niż docelowy
 \input{songs-alt/ryczace_dwudziestki-few_days}
+\setcounter{section}{7}
+\input{songs-alt/ryczace_dwudziestki-hiszpanskie_dziewczyny}\newpage\pagestyle{szanty}
+\setcounter{section}{11}
+\input{songs-alt/perly_i_lotry-la_valette}
 \setcounter{section}{20}
 \input{songs-alt/cztery_refy-press_gang(branka)}
+\setcounter{section}{23}
+\input{songs-alt/hugues_aufray-santiano}
+\setcounter{section}{29}
+\input{songs-alt/the_longest_johns-wellerman}
 
 \chapter{Poezja śpiewana}
 \begin{center}
     \includegraphics[width=0.5\textwidth]{images/chatka.jpg}
 \end{center}
 \pagestyle{poezja}
+\setcounter{section}{2}
+\input{songs-alt/marek_grechuta-dni_ktorych_nie_znamy}\newpage\pagestyle{poezja}
+\setcounter{section}{6}
+\input{songs-alt/wolna_grupa_bukowina-majster_bieda}
 
 \chapter{Pop}
 \begin{center}
@@ -215,6 +231,8 @@
 \input{songs-alt/andrzej_zaucha-bylas_serca_biciem.tex}
 \setcounter{section}{2}
 \input{songs-alt/lao_che-hydropieklowstapienie}
+\setcounter{section}{21}
+\input{songs-alt/t_love-warszawa}
 
 % Ostatnia strona parzysta pusta, żeby nie było tekstu na odwrocie
 \clearpage{\mbox{}\pagestyle{empty}\cleardoublepage}
