@@ -7,7 +7,7 @@
 \usepackage{graphicx}
 \usepackage{hyperref}
 \usepackage{tocloft}
-\usepackage[toc]{multitoc}
+%\usepackage[toc]{multitoc}  % Odkomentować dla dwukolumnowego spisu treści
 \usepackage{fancyhdr}
 \usepackage{tikzpagenodes}
 \usepackage{titlesec}
@@ -142,24 +142,25 @@
 
         \Huge\textbf{Jakieś piosenki}
         
+        \vspace{0.3cm}
+        \large Aneks dla niegrających na gitarze
+
         \vspace{0.5cm}
-        \Large Aneks dla niegrających na gitarze \\
-        \LARGE Wydanie pierwsze
+        \large Wydanie pierwsze
         
         \vfill
 
-        \Large
+        \large
         Wydawnictwo Kis Inkris \\
         Warszawa, 2021
 
-        %\vspace{0.5cm}
+        \vspace{0.8cm}
 
-        %\footnotesize
-        %https://github.com/dzierzanowski/spiewnik-szant
-
-        %\begin{tikzpicture}[remember picture,overlay,shift={(current page.south east)}]
-        %    \node[anchor=south east,xshift=0cm,yshift=0cm]{\includegraphics[width=3.5cm]{images/qr.png}};
-        %\end{tikzpicture}
+        \footnotesize
+        \textit{%
+        Gdzie słyszysz śpiew, tam wejdź, tam dobre serce mają \\
+        Żli ludzie, wierzaj mi, ci nigdy nie śpiewają} \medskip \\
+        Johann Gottfried Seume, \textit{Die Gesänge}
     \end{center}
 \end{titlepage}
 
@@ -224,7 +225,7 @@
 \setcounter{section}{6}
 \input{songs-alt/wolna_grupa_bukowina-majster_bieda}
 \setcounter{section}{11}
-\input{songs-alt/marek_grechuta-swiecie_nasz}
+\input{songs-alt/marek_grechuta-swiecie_nasz}\newpage\pagestyle{poezja}
 
 \chapter{Pop}
 \begin{center}
