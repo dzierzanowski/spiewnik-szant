@@ -120,6 +120,12 @@
     \fancyfoot[LO]{\includegraphics[height=45pt]{images/gwiazdy.png}}
     \fancyfoot[RE]{\includegraphics[height=45pt]{images/gitara.png}}
 }
+\fancypagestyle{legendy}{%
+    \pagestyle{plain}
+    \fancyhead[R]{Legendy, opowieści, ciekawostki}
+    \fancyfoot[LO]{\includegraphics[height=45pt]{images/swieczka.png}}
+    \fancyfoot[RE]{\includegraphics[height=45pt]{images/fajka.png}}
+}
 
 \renewcommand{\cftdot}{\ensuremath{\sim}}
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
@@ -194,6 +200,10 @@
 
     \urlstyle{same}
     \url{https://github.com/dzierzanowski/spiewnik-szant}
+
+    \bigskip
+
+    Dziękujemy za grafiki z Freepik od dgim-studio i pch.vector!
 
     &
 
@@ -290,6 +300,13 @@
 \input{songs/raz_dwa_trzy-trudno_nie_wierzyc_w_nic}
 \input{songs/t_love-warszawa}
 \input{songs/happysad-zanim_pojde}
+
+\chapter{Legendy, opowieści, ciekawostki}
+\begin{center}
+    \includegraphics[width=0.4\textwidth]{images/bosman.png}
+\end{center}
+\pagestyle{legendy}
+\input{legendy}
 
 % Ostatnia strona parzysta pusta, żeby nie było tekstu na odwrocie
 \clearpage{\mbox{}\pagestyle{empty}\cleardoublepage}
