@@ -36,6 +36,7 @@
 \selectlanguage{polish}
 \DeclareTranslation{Polish}{leadsheets/chorus}{Ref.}
 \DeclareTranslation{Polish}{leadsheets/interlude}{Przej.}
+\DeclareTranslation{Polish}{leadsheets/bridge}{Bridge}
 \DeclareTranslation{Polish}{leadsheets/lyrics}{tekst}
 \DeclareTranslation{Polish}{leadsheets/verse}{Zwr.}
 \DeclareTranslation{Polish}{leadsheets/capo}{Capo}
@@ -122,6 +123,12 @@
     \fancyfoot[LO]{\includegraphics[height=45pt]{images/gwiazdy.png}}
     \fancyfoot[RE]{\includegraphics[height=45pt]{images/gitara.png}}
 }
+\fancypagestyle{autorskie}{%
+    \pagestyle{plain}
+    \fancyhead[R]{Autorskie}
+    \fancyfoot[LO]{\includegraphics[height=45pt]{images/kalamarz.jpeg}}
+    \fancyfoot[RE]{\includegraphics[height=45pt]{images/ksiazka_bazgroly.png}}
+}
 \fancypagestyle{legendy}{%
     \pagestyle{plain}
     \fancyhead[R]{Legendy, opowieści, ciekawostki}
@@ -164,7 +171,7 @@
 
         \large
         Wydawnictwo Kis Inkris \\
-        Warszawa, 2021
+        Warszawa, 2023
 
         \vspace{0.8cm}
 
@@ -193,6 +200,10 @@
     Kamil Dzierżanowski \hfill opracowanie, skład, korekta
 
     Paweł Kulig \hfill opracowanie
+
+    Piotr Wieżel \hfill opracowanie
+    
+    Mateusz Dorobek \hfill opracowanie
 
     \medskip
 
@@ -317,6 +328,14 @@
 \end{center}
 \pagestyle{pop}
 \input{songs/edyta_gorniak-to_nie_ja}
+
+\chapter{Autorskie}
+\begin{center}
+    \includegraphics[width=0.4\textwidth]{images/writing_hand.jpeg}
+\end{center}
+\pagestyle{autorskie}
+\input{songs/nowy-slad-dzien_wojownika}
+\input{songs/nowy-slad-niezapominajka}
 
 \chapter{Legendy, opowieści, ciekawostki}
 \begin{center}
