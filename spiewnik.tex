@@ -36,6 +36,7 @@
 \selectlanguage{polish}
 \DeclareTranslation{Polish}{leadsheets/chorus}{Ref.}
 \DeclareTranslation{Polish}{leadsheets/interlude}{Przej.}
+\DeclareTranslation{Polish}{leadsheets/bridge}{Bridge}
 \DeclareTranslation{Polish}{leadsheets/lyrics}{tekst}
 \DeclareTranslation{Polish}{leadsheets/verse}{Zwr.}
 \DeclareTranslation{Polish}{leadsheets/capo}{Capo}
@@ -122,6 +123,12 @@
     \fancyfoot[LO]{\includegraphics[height=45pt]{images/gwiazdy.png}}
     \fancyfoot[RE]{\includegraphics[height=45pt]{images/gitara.png}}
 }
+\fancypagestyle{autorskie}{%
+    \pagestyle{plain}
+    \fancyhead[R]{Autorskie}
+    \fancyfoot[LO]{\includegraphics[height=45pt]{images/kalamarz.jpeg}}
+    \fancyfoot[RE]{\includegraphics[height=45pt]{images/ksiazka_bazgroly.png}}
+}
 \fancypagestyle{legendy}{%
     \pagestyle{plain}
     \fancyhead[R]{Legendy, opowieści, ciekawostki}
@@ -158,13 +165,14 @@
         
         \vspace{0.5cm}
         
-        \large Wydanie pierwsze
+        \large Wydanie pierwsze \\
+        \small Podwydanie pierwsze
         
         \vfill
 
         \large
         Wydawnictwo Kis Inkris \\
-        Warszawa, 2021
+        Warszawa, 2023
 
         \vspace{0.8cm}
 
@@ -193,6 +201,10 @@
     Kamil Dzierżanowski \hfill opracowanie, skład, korekta
 
     Paweł Kulig \hfill opracowanie
+
+    Piotr Wieżel \hfill opracowanie
+    
+    Mateusz Dorobek \hfill opracowanie
 
     \medskip
 
@@ -246,6 +258,7 @@
 \input{songs/roman_roczen-przechyly}
 \input{songs/zejman_garkumpel-samantha}
 \input{songs/hugues_aufray-santiano}
+\input{songs/ryczace_dwudziestki-shenandoah}
 \input{songs/mechanicy_shanty-stara_maui}
 \input{songs/ekt_gdynia-stary_bryg}
 \input{songs/mechanicy_shanty-stary_wrak}
@@ -260,6 +273,7 @@
 \pagestyle{poezja}
 \input{songs/jacek_kaczmarski-1788}\newpage\pagestyle{poezja}
 \input{songs/ekt_gdynia-ballada_na_zle_drogi}
+\input{songs/grzegorz_turnau-bracka}
 \input{songs/marek_grechuta-dni_ktorych_nie_znamy}\newpage\pagestyle{poezja}
 \input{songs/sdm-jak}
 \input{songs/tomasz_lewandowski-jaka_jestes}
@@ -271,6 +285,7 @@
 \input{songs/wolna_grupa_bukowina-sielanka_o_domu}
 \input{songs/marek_grechuta-swiecie_nasz}\newpage\pagestyle{poezja}
 \input{songs/marcin_przybylowicz-wilcza_zamiec}
+\input{songs/wild_mountain_thyme}
 
 \chapter{Pop}
 \begin{center}
@@ -278,6 +293,9 @@
 \end{center}
 \pagestyle{pop}
 \input{songs/andrzej_zaucha-bylas_serca_biciem}
+\input{songs/bajm-biala_armia}
+\input{songs/andrzej_zaucha-cest_la_vie}
+\input{songs/bajm-co_mi_panie_dasz}
 \input{songs/brodka-granda}
 \input{songs/lao_che-hydropieklowstapienie}
 \input{songs/linkin_park-in_the_end}
@@ -299,9 +317,29 @@
 \input{songs/czeslaw_niemen-sen_o_warszawie}
 \input{songs/david_bowie-space_oddity}
 \input{songs/the_kinks-sunny_afternoon}
+\input{songs/kayah-to_nie_ptak}
 \input{songs/raz_dwa_trzy-trudno_nie_wierzyc_w_nic}
 \input{songs/t_love-warszawa}
+\input{songs/martyna_jakubowicz-w_domach_z_betonu}
+\input{songs/andrzej_zaucha-wymyslilem_ciebie}
 \input{songs/happysad-zanim_pojde}
+
+\chapter{Polska na Eurowizji}
+\begin{center}
+    \includegraphics[width=0.4\textwidth]{images/Eurovision-Logo.png}
+\end{center}
+\pagestyle{pop}
+\input{songs/edyta_gorniak-to_nie_ja}
+
+\chapter{Autorskie}
+\begin{center}
+    \includegraphics[width=0.4\textwidth]{images/writing_hand.jpeg}
+\end{center}
+\pagestyle{autorskie}
+\input{songs/nowy_slad-dzien_wojownika}
+\input{songs/nowy_slad-niezapominajka}
+\input{songs/nowy_slad-skarby_i_serca}
+\input{songs/bouda}
 
 \chapter{Legendy, opowieści, ciekawostki}
 \begin{center}

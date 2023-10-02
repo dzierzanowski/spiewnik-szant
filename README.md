@@ -25,9 +25,16 @@ kompilatorem `xelatex` oraz wymagany jest zestaw paczek określony w nagłówku
 pliku `spiewnik.tex`, m.in. [leadsheets](https://github.com/cgnieder/leadsheets).
 Paczki powinny być już zawarte w pełnej instalacji `texlive`.
 
+### Ubuntu
+```bash
+sudo apt install texlive-xetex
+sudo apt install texlive-music
+```
+
 Aby wygenerować `spiewnik.pdf`, wykonaj polecenie:
 
 ```bash
 # Dwukrotna kompilacja ze względu na spis treści
 xelatex spiewnik.tex && xelatex spiewnik.tex
 ```
+
